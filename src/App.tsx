@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import Podium from './icons/Podium';
 import Settings from './icons/Settings';
+import Help from './icons/Help';
 
 const X = Array.from(Array(6).keys());
 const Y = Array.from(Array(5).keys());
@@ -19,7 +20,11 @@ const App = () => {
       <StatusBar barStyle="light-content" />
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text>Wordle Bruh!</Text>
+          <Pressable style={styles.btn}>
+            <Help color="#3a3a3c" />
+          </Pressable>
+
+          <Text style={styles.title}>Wordle</Text>
 
           <View style={styles.menu}>
             <Pressable style={styles.btn}>
@@ -67,8 +72,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
+    marginBottom: 10,
     alignItems: 'center',
-    height: 100,
+    height: 80,
+    borderBottomWidth: 1,
+    borderBottomColor: '#3a3a3c',
   },
   menu: {
     flexDirection: 'row',
@@ -79,7 +87,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     minWidth: 350,
+
     height: 70,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#fff',
+    textTransform: 'uppercase',
   },
   cell: {
     flex: 1,
